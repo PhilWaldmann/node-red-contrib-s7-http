@@ -1,0 +1,46 @@
+<script type="text/javascript">
+  RED.nodes.registerType('s7-http',{
+    category: 'config',
+    defaults: {
+      name: {value: ''},
+      ip: {required: true, value: ''},
+      rack: {value: '0', validate:RED.validators.number()},
+      slot: {value: '0', validate:RED.validators.number()}
+    },
+    credentials: {
+      username: {type:"text"},
+      password: {type:"password"}
+    },
+    label: function() {
+      return this.name || this.ip
+    }
+  })
+</script>
+
+<script type="text/x-red" data-template-name="s7-http">
+  <div class="form-row">
+    <label for="node-config-input-name"><i class="icon-bookmark"></i> Name</label>
+    <input type="text" id="node-config-input-name">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-ip"><i class="icon-bookmark"></i> IP/Hostname</label>
+    <input type="text" id="node-config-input-ip" placeholder="">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-username"><i class="icon-bookmark"></i> Username</label>
+    <input type="text" id="node-config-input-username" placeholder="">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-password"><i class="icon-bookmark"></i> Password</label>
+    <input type="text" id="node-config-input-password" placeholder="">
+  </div>
+
+  <div class="form-row">
+    <label for="node-config-input-rack"><i class="icon-bookmark"></i> Rack</label>
+    <input type="text" id="node-config-input-rack" placeholder="0">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-slot"><i class="icon-bookmark"></i> Slot</label>
+    <input type="text" id="node-config-input-slot" placeholder="0">
+  </div>
+</script>

@@ -1,0 +1,31 @@
+{
+    "name": "node-red-contrib-s7-http",
+    "version": "1.0.0",
+    "description": "A Node-RED node to interact with Siemens S7 via HTTP",
+    "main": "index.js",
+    "dependencies": {
+        "axios": "^0.18.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/PhilWaldmann/node-red-contrib-s7-http.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "hardware",
+        "s7",
+        "siemens",
+        "http",
+        "node-red"
+    ],
+    "node-red": {
+        "nodes": {
+            "s7-http": "s7-http.js",
+            "s7-http-get": "s7-http-get.js"
+        }
+    },
+    "author": "Philipp Waldmann <philipp@wu-server.com>",
+    "license": "ISC"
+}

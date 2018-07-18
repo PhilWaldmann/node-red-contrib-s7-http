@@ -1,0 +1,41 @@
+<script type="text/javascript">
+  RED.nodes.registerType('s7-http-get',{
+    category: 'input',
+    color: '#C0DEED',
+    defaults: {
+      name: {value: ''},
+      s7http: {required: true, value: '', type: 's7-http'},
+      offset: {required: true, value: '2000'},
+      interval: {value: 5000, required:true, validate:RED.validators.number()}
+    },
+    inputs: 0,
+    outputs: 1,
+    icon: "serial.png",
+    label: function() {
+      return this.name || 'S7 #' + this.offset
+    }
+  })
+</script>
+
+<script type="text/x-red" data-template-name="s7-http-get">
+  <div class="form-row">
+    <label for="node-input-s7http"><i class="icon-tag"></i> Server</label>
+    <input type="text" id="node-input-s7http" placeholder="">
+  </div>
+  <div class="form-row">
+    <label for="node-input-offset"><i class="icon-tag"></i> Variable Offset</label>
+    <input type="text" id="node-input-offset" placeholder="0">
+  </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-interval"><i class="icon-tag"></i> Interval</label>
+    <input type="text" id="node-input-interval">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="s7-http-get">
+    <p>Read a single variable from S7 via http</p>
+</script>
