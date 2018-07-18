@@ -40,7 +40,7 @@ module.exports = function(RED) {
       .catch(function(error){
         RED.log.error(error)
       })
-    }, config.interval * 1000)
+    }, config.interval)
 
     this.close = function(){
       clearInterval(interval)
